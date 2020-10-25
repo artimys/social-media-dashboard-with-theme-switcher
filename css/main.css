@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+/*==========
+DEFAULTS
+=========*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+.font-slim {
+  font-weight: 400;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/*==========
+COMPONENTS - Followers card
+=========*/
+.followers-card {
+  background-color: #f0f2fa;
+  border-radius: 5px;
+  border-top: 3px solid transparent;
+  color: #63687e;
+  font-weight: 700;
+  text-align: center;
+}
+
+.followers-card--facebook {
+  border-top-color: #198ff5;
+}
+
+.followers-card--twitter {
+  border-top-color: #1ca0f2;
+}
+
+.followers-card--instagram {
+  border-image-slice: 1;
+  border-image-source: linear-gradient(90deg, #fdc468, #df4996);
+}
+
+.followers-card--youtube {
+  border-top-color: #c4032a;
+}
+
+.followers-card__count {
+  color: #1e202a;
+}
+
+.followers-card__count small {
+  display: block;
+  color: #63687e;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.followers-card__bottom--up {
+  color: #1db489;
+}
+
+.followers-card__bottom--down {
+  color: #dc414c;
+}
+
+/*==========
+COMPONENTS - Overview card
+=========*/
+.overview-card {
+  background-color: #f0f2fa;
+  border-radius: 5px;
+  color: #63687e;
+  font-weight: 700;
+}
+
+/*==========
+LAYOUT
+=========*/
+.body-bg {
+  z-index: 0;
+  background-color: #f5f7ff;
+  position: absolute;
+  width: 100%;
+  height: 225px;
+  top: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin: auto;
+  max-width: 1100px;
+  background-color: pink;
+}
+
+.container .top-row,
+.container .overview-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 2em;
+}
+
+/*==========
+DESKTOP
+=========*/
+@media only screen and (min-width: 700px) {
+  .container .top-row,
+  .container .overview-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-column-gap: 2em;
+            column-gap: 2em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .container .top-row .followers-card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .container .overview-row .overview-card {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 251px;
+            flex: 1 1 251px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
