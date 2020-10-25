@@ -37,28 +37,39 @@ body {
     min-height: 100vh;
 }
 
-.font-slim {
-    font-weight: 400;
-}
-.font-bold{
+h1 {
+    color: $very-dark-blue-text;
     font-weight: 700;
 }
-
+h2 {
+    color: $dark-grayish-blue-text;
+    font-size: 1.3rem;
+}
 
 
 
 /*==========
-COMPONENTS - Followers card
+COMPONENTS
 =========*/
-.followers-card {
+
+.followers-card,
+.overview-card {
     background-color: $light-grayish-blue-card-bg;
     border-radius: 5px;
-    border-top: 3px solid transparent;
-    // padding: 1.5em 2em;
     color: $dark-grayish-blue-text;
     font-weight: 700;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($light-grayish-blue-card-bg, 2%);
+    }
+}
+
+// ----------- Followers card---------------------------
+.followers-card {
+    border-top: 3px solid transparent;
+    padding: 1.5em 2em;
     text-align: center;
-    // max-width: 251px; // Most each card should be in width
 
 
     &--facebook {
@@ -75,17 +86,36 @@ COMPONENTS - Followers card
         border-top-color: $youTube;
     }
 
+    &__top {
+        display: inline-flex;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    &__tag {
+        font-size: 0.8rem;
+    }
+
     &__count {
+        margin-top: 10px;
+        font-size: 3.5rem;
         color: $very-dark-blue-text;
         small {
             display: block;
             color: $dark-grayish-blue-text;
+            text-transform: uppercase;
+            font-size: 0.8rem;
             font-weight: 400;
-            letter-spacing: 3px;
+            letter-spacing: 5px;
         }
     }
 
     &__bottom {
+        margin-top: 20px;
+        font-size: 0.8rem;
+        display: inline-flex;
+        align-items: center;
+        column-gap: 5px;
         &--up {
             color: $lime-green;
         }
@@ -96,17 +126,49 @@ COMPONENTS - Followers card
 }
 
 
-/*==========
-COMPONENTS - Overview card
-=========*/
+// ----------- Overview card---------------------------
+
 .overview-card {
-    background-color: $light-grayish-blue-card-bg;
-    border-radius: 5px;
-    // padding: 1.5em 2em;
-    color: $dark-grayish-blue-text;
-    font-weight: 700;
+    padding: 1.5em;
+    font-size: 0.8rem;
 
+    &__top {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    &__title {
+        flex: 1;
+    }
+    &__media-icon {
+        flex: 1;
+        text-align: right;
+    }
 
+    &__bottom {
+        display: flex;
+        align-items: flex-end;
+    }
+     &__count {
+        flex: 1;
+        color: $very-dark-blue-text;
+        font-size: 2rem;
+    }
+    &__percentage {
+        flex: 1;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: flex-end;
+        column-gap: 5px;
+
+        &--up {
+            color: $lime-green;
+        }
+        &--down {
+            color: $bright-red;
+        }
+    }
 }
 
 
@@ -119,8 +181,37 @@ LAYOUT
     background-color: $very-pale-blue-top-bg-pattern;
     position: absolute;
     width: 100%;
-    height: 225px;
+    height: 240px;
     top: 0;
+}
+
+.heading-dashboard,
+.heading-overview {
+    font-weight: 700;
+}
+
+.heading-dashboard {
+    &__title{
+        font-size: 1.5rem;
+        margin-bottom: 4px;
+    }
+    &__sub-title{
+        font-size: 0.9rem;
+        color: $dark-grayish-blue-text;
+    }
+}
+
+.heading-theme-wrap {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: $dark-grayish-blue-text;
+
+    // Divider with margin/padding
+    margin-top: 2em;
+    padding: 1.7em 0;
+    border-top: 1px solid $dark-grayish-blue-text;
 }
 
 .container {
@@ -128,14 +219,19 @@ LAYOUT
     z-index: 1;
     width: 80%;
     margin: auto;
+    padding-top: 40px;
     max-width: 1100px;
-    background-color: pink;
 
-    .top-row,
-    .overview-row {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-row {
         display: flex;
         flex-direction: column;
         row-gap: 2em;
+        margin: 1.5em 0 2.7em;
     }
 }
 
@@ -145,29 +241,38 @@ LAYOUT
 DESKTOP
 =========*/
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 650px) {
+
+    .heading-dashboard {
+        flex: 2;
+    }
+
+    .heading-theme-wrap {
+        justify-content: flex-end;
+        flex: 1;
+
+        // Divider with margin/padding
+        margin-top: 0;
+        margin-bottom: 4.5em;
+        padding: 0;
+        border-top: 0;
+    }
 
     .container {
+        header {
+            flex-direction: row;
+        }
 
-        .top-row,
-        .overview-row {
+        .card-row {
             flex-direction: row;
             column-gap: 2em;
             flex-wrap: wrap;
-        }
 
-        .top-row {
-            .followers-card {
-                flex: 1;
-            }
-        }
-
-        .overview-row {
+            .followers-card,
             .overview-card {
                 flex: 1 1 251px; // grow, shrink, length of item
             }
-        }
-
+       }
     }
 
 }

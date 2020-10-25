@@ -21,19 +21,20 @@
   <div class="container">
 
     <header>
-      <div>
-        <h1>Social Media Dashboard</h1>
-        Total Followers: 23,004
+      <div class="heading-dashboard">
+        <h1 class="heading-dashboard__title">Social Media Dashboard</h1>
+        <span class="heading-dashboard__sub-title">Total Followers: 23,004</span>
       </div>
 
-      <div class="theme-toggle">
-        Dark Mode
+      <div class="heading-theme-wrap">
+        <span class="heading-theme-wrap__title">Dark Mode</span>
+        <div class="heading-theme-wrap__toggle">toggle</div>
       </div>
     </header>
 
     <main>
 
-      <div class="top-row">
+      <div class="card-row">
         <div class="followers-card followers-card--facebook">
           <div class="followers-card__top">
             <img alt="Facebook" src="images/icon-facebook.svg" class="followers-card__icon" />
@@ -104,84 +105,140 @@
       </div>
 
 
-      <div class="overview-heading">
-        <h3>Overview - Today</h3>
+      <div class="heading-overview">
+        <h2>Overview - Today</h2>
       </div>
 
 
-      <div class="overview-row">
+      <div class="card-row">
 
         <div class="overview-card">
-          <div class="overview-card__title">Page Views</div>
-          <div class="overview-card__media-icon">
-            <img alt="Facebook" src="images/icon-facebook.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Page Views</div>
+            <div class="overview-card__media-icon">
+              <img alt="Facebook" src="images/icon-facebook.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">87</div>
-          <div class="overview-card__percentage">3%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">87</div>
+            <div class="overview-card__percentage overview-card__percentage--up">
+              <img alt="Up" src="images/icon-up.svg" /> 3%
+            </div>
+          </div>
         </div>
 
         <div class="overview-card">
-          <div class="overview-card__title">Likes</div>
-          <div class="overview-card__media-icon">
-            <img alt="Facebook" src="images/icon-facebook.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Likes</div>
+            <div class="overview-card__media-icon">
+              <img alt="Facebook" src="images/icon-facebook.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">52</div>
-          <div class="overview-card__percentage">2%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">52</div>
+            <div class="overview-card__percentage overview-card__percentage--down">
+              <img alt="Down" src="images/icon-down.svg" /> 2%
+            </div>
+          </div>
         </div>
 
         <div class="overview-card">
-          <div class="overview-card__title">Likes</div>
-          <div class="overview-card__media-icon">
-            <img alt="Instagram" src="images/icon-instagram.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Likes</div>
+            <div class="overview-card__media-icon">
+              <img alt="Instagram" src="images/icon-instagram.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">5462</div>
-          <div class="overview-card__percentage">2257%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">5462</div>
+            <div class="overview-card__percentage overview-card__percentage--up">
+              <img alt="Up" src="images/icon-up.svg" /> 2257%
+            </div>
+          </div>
         </div>
 
         <div class="overview-card">
-          <div class="overview-card__title">Profile Views</div>
-          <div class="overview-card__media-icon">
-            <img alt="Instagram" src="images/icon-instagram.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Profile Views</div>
+            <div class="overview-card__media-icon">
+              <img alt="Instagram" src="images/icon-instagram.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">52k</div>
-          <div class="overview-card__percentage">1375%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">52k</div>
+            <div class="overview-card__percentage overview-card__percentage--up">
+              <img alt="Up" src="images/icon-up.svg" /> 1375%
+            </div>
+          </div>
         </div>
 
 
         <div class="overview-card">
-          <div class="overview-card__title">Retweets</div>
-          <div class="overview-card__media-icon">
-            <img alt="Twitter" src="images/icon-twitter.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Retweets</div>
+            <div class="overview-card__media-icon">
+              <img alt="Twitter" src="images/icon-twitter.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">117</div>
-          <div class="overview-card__percentage">303%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">117</div>
+            <div class="overview-card__percentage overview-card__percentage--up">
+              <img alt="Up" src="images/icon-up.svg" /> 303%
+            </div>
+          </div>
         </div>
 
         <div class="overview-card">
-          <div class="overview-card__title">Likes</div>
-          <div class="overview-card__media-icon">
-            <img alt="Twitter" src="images/icon-twitter.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Likes</div>
+            <div class="overview-card__media-icon">
+              <img alt="Twitter" src="images/icon-twitter.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">507</div>
-          <div class="overview-card__percentage">553%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">507</div>
+            <div class="overview-card__percentage overview-card__percentage--up">
+              <img alt="Up" src="images/icon-up.svg" /> 553%
+            </div>
+          </div>
         </div>
 
         <div class="overview-card">
-          <div class="overview-card__title">Likes</div>
-          <div class="overview-card__media-icon">
-            <img alt="Youtube" src="images/icon-youtube.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Likes</div>
+            <div class="overview-card__media-icon">
+              <img alt="Youtube" src="images/icon-youtube.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">107</div>
-          <div class="overview-card__percentage">19%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">107</div>
+            <div class="overview-card__percentage overview-card__percentage--down">
+              <img alt="Down" src="images/icon-down.svg" /> 19%
+            </div>
+          </div>
         </div>
 
         <div class="overview-card">
-          <div class="overview-card__title">Total Views</div>
-          <div class="overview-card__media-icon">
-            <img alt="Youtube" src="images/icon-youtube.svg" />
+          <div class="overview-card__top">
+            <div class="overview-card__title">Total Views</div>
+            <div class="overview-card__media-icon">
+              <img alt="Youtube" src="images/icon-youtube.svg" />
+            </div>
           </div>
-          <div class="overview-card__count">1407</div>
-          <div class="overview-card__percentage">12%</div>
+
+          <div class="overview-card__bottom">
+            <div class="overview-card__count">1407</div>
+            <div class="overview-card__percentage overview-card__percentage--down">
+              <img alt="Down" src="images/icon-down.svg" /> 12%
+            </div>
+          </div>
         </div>
       </div>
 
