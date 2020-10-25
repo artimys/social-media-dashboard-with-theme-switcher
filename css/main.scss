@@ -18,8 +18,6 @@ $light-grayish-blue-card-bg: hsl(227, 47%, 96%);
 $dark-grayish-blue-text: hsl(228, 12%, 44%);
 $very-dark-blue-text: hsl(230, 17%, 14%);
 
-// Neutral colors - dark theme
-
 
 
 /*==========
@@ -61,6 +59,7 @@ COMPONENTS
 
     &:hover {
         cursor: pointer;
+        // TODO get color right
         background-color: darken($light-grayish-blue-card-bg, 2%);
     }
 }
@@ -149,7 +148,7 @@ COMPONENTS
         display: flex;
         align-items: flex-end;
     }
-     &__count {
+    &__count {
         flex: 1;
         color: $very-dark-blue-text;
         font-size: 2rem;
@@ -186,8 +185,10 @@ LAYOUT
 }
 
 .heading-dashboard,
+.heading-theme-wrap,
 .heading-overview {
     font-weight: 700;
+    color: $dark-grayish-blue-text;
 }
 
 .heading-dashboard {
@@ -197,7 +198,6 @@ LAYOUT
     }
     &__sub-title{
         font-size: 0.9rem;
-        color: $dark-grayish-blue-text;
     }
 }
 
@@ -205,8 +205,6 @@ LAYOUT
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    font-weight: 700;
-    color: $dark-grayish-blue-text;
 
     // Divider with margin/padding
     margin-top: 2em;
@@ -275,4 +273,51 @@ DESKTOP
        }
     }
 
+}
+
+
+
+
+
+/*==========
+DARK THEME
+=========*/
+
+// Neutral colors - light theme
+$very-dark-blue-bg: hsl(230, 17%, 14%);
+$very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
+$dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+$desaturated-blue-text: hsl(228, 34%, 66%);
+$white-text: hsl(0, 0%, 100%);
+
+
+body.dark-magic {
+    background-color: $very-dark-blue-bg;
+    color: $white-text;
+
+    h1, h2,
+    .heading-theme-wrap,
+    .overview-card__count {
+        color: $white-text;
+    }
+
+    .body-bg {
+        background-color: $very-dark-blue-top-bg-pattern;
+    }
+
+    .heading-dashboard,
+    .heading-overview {
+        color: $desaturated-blue-text;
+    }
+
+    .followers-card,
+    .overview-card {
+        background-color: $dark-desaturated-blue-card-bg;
+        color: $desaturated-blue-text;
+
+        &:hover {
+            // TODO get color right
+            background-color: lighten($dark-desaturated-blue-card-bg, 5%);
+        }
+    }
 }

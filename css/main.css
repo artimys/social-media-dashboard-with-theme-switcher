@@ -199,8 +199,10 @@ LAYOUT
 }
 
 .heading-dashboard,
+.heading-theme-wrap,
 .heading-overview {
   font-weight: 700;
+  color: #63687e;
 }
 
 .heading-dashboard__title {
@@ -210,7 +212,6 @@ LAYOUT
 
 .heading-dashboard__sub-title {
   font-size: 0.9rem;
-  color: #63687e;
 }
 
 .heading-theme-wrap {
@@ -221,8 +222,6 @@ LAYOUT
       -ms-flex-pack: justify;
           justify-content: space-between;
   font-size: 0.8rem;
-  font-weight: 700;
-  color: #63687e;
   margin-top: 2em;
   padding: 1.7em 0;
   border-top: 1px solid #63687e;
@@ -302,5 +301,39 @@ DESKTOP
         -ms-flex: 1 1 251px;
             flex: 1 1 251px;
   }
+}
+
+/*==========
+DARK THEME
+=========*/
+body.dark-magic {
+  background-color: #1e202a;
+  color: white;
+}
+
+body.dark-magic h1, body.dark-magic h2,
+body.dark-magic .heading-theme-wrap,
+body.dark-magic .overview-card__count {
+  color: white;
+}
+
+body.dark-magic .body-bg {
+  background-color: #1f212e;
+}
+
+body.dark-magic .heading-dashboard,
+body.dark-magic .heading-overview {
+  color: #8b97c6;
+}
+
+body.dark-magic .followers-card,
+body.dark-magic .overview-card {
+  background-color: #252a41;
+  color: #8b97c6;
+}
+
+body.dark-magic .followers-card:hover,
+body.dark-magic .overview-card:hover {
+  background-color: #2e3552;
 }
 /*# sourceMappingURL=main.css.map */
