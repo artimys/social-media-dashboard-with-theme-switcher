@@ -75,10 +75,9 @@ COMPONENTS
 
 // ----------- Followers card---------------------------
 .followers-card {
-    border-top: 4px solid transparent;
+    border-top: 5px solid transparent;
     padding: 1.5em 2em;
     text-align: center;
-
 
     &--facebook {
         border-top-color: $facebook;
@@ -160,6 +159,7 @@ COMPONENTS
         flex: 1;
         color: $very-dark-blue-text;
         font-size: 2rem;
+        line-height: 26px;
     }
     &__percentage {
         flex: 1;

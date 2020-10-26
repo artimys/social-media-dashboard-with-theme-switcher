@@ -43,7 +43,7 @@ COMPONENTS
 }
 
 .followers-card {
-  border-top: 4px solid transparent;
+  border-top: 5px solid transparent;
   padding: 1.5em 2em;
   text-align: center;
 }
@@ -159,6 +159,7 @@ COMPONENTS
           flex: 1;
   color: #1e202a;
   font-size: 2rem;
+  line-height: 26px;
 }
 
 .overview-card__percentage {
