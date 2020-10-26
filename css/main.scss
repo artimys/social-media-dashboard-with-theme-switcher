@@ -9,14 +9,23 @@ $twitter: hsl(203, 89%, 53%);
 $instagram: linear-gradient(90deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
 $youTube: hsl(348, 97%, 39%);
 
-// Neutral colors - light theme
+// Neutral colors - toggle background colors
 $light-toggle: hsl(230, 22%, 74%);
+$rainbow-toggle: linear-gradient(90deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 
+// Neutral colors - light theme
 $white-bg: hsl(0, 0%, 100%);
 $very-pale-blue-top-bg-pattern: hsl(225, 100%, 98%);
 $light-grayish-blue-card-bg: hsl(227, 47%, 96%);
 $dark-grayish-blue-text: hsl(228, 12%, 44%);
 $very-dark-blue-text: hsl(230, 17%, 14%);
+
+// Neutral colors - dark theme
+$very-dark-blue-bg: hsl(230, 17%, 14%);
+$very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
+$dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+$desaturated-blue-text: hsl(228, 34%, 66%);
+$white-text: hsl(0, 0%, 100%);
 
 
 
@@ -66,7 +75,7 @@ COMPONENTS
 
 // ----------- Followers card---------------------------
 .followers-card {
-    border-top: 3px solid transparent;
+    border-top: 4px solid transparent;
     padding: 1.5em 2em;
     text-align: center;
 
@@ -126,7 +135,6 @@ COMPONENTS
 
 
 // ----------- Overview card---------------------------
-
 .overview-card {
     padding: 1.5em;
     font-size: 0.8rem;
@@ -170,6 +178,61 @@ COMPONENTS
     }
 }
 
+// ----------- Toggle switch---------------------------
+// To modify toggle size,
+// please only update the $circle-size variable
+$circle-size: 20px;
+$toggle-button-width: ($circle-size * 2) + 18px;
+$toggle-button-padding: 5px;
+$circle-translate: $toggle-button-width - $circle-size - ($toggle-button-padding * 2);
+
+.toggle-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+
+    // Real checkbox hidden
+    &__checkbox {
+        visibility: hidden;
+        position: absolute;
+        top: -50px;
+
+        &:checked {
+            // ~ selector looks at sibling selector
+            // then descend to circle element to style
+            ~ .toggle-switch__button {
+                .toggle-switch__circle {
+                    background-color: $dark-desaturated-blue-card-bg;
+                    transform: translate(0);
+                }
+           }
+        }
+    }
+    &__button {
+        display: inline-block;
+        border-radius: 50px;
+        width: $toggle-button-width;
+        padding: $toggle-button-padding;
+        background-color: $light-toggle;
+        cursor: pointer;
+    }
+     &__circle {
+        background-color: #fff;
+        border-radius: 50%;
+        width: $circle-size;
+        height: $circle-size;
+        transform: translate($circle-translate);
+        transition: transform 0.5s ease;
+    }
+    &:hover {
+        .toggle-switch__button {
+            background-image: $rainbow-toggle;
+        }
+    }
+}
+
+
 
 /*==========
 LAYOUT
@@ -202,9 +265,7 @@ LAYOUT
 }
 
 .heading-theme-wrap {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.8rem;
+   font-size: 0.8rem;
 
     // Divider with margin/padding
     margin-top: 2em;
@@ -242,13 +303,10 @@ DESKTOP
 @media only screen and (min-width: 650px) {
 
     .heading-dashboard {
-        flex: 2;
+        flex: 1;
     }
 
     .heading-theme-wrap {
-        justify-content: flex-end;
-        flex: 1;
-
         // Divider with margin/padding
         margin-top: 0;
         margin-bottom: 4.5em;
@@ -277,19 +335,9 @@ DESKTOP
 
 
 
-
-
 /*==========
 DARK THEME
 =========*/
-
-// Neutral colors - light theme
-$very-dark-blue-bg: hsl(230, 17%, 14%);
-$very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
-$dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
-$desaturated-blue-text: hsl(228, 34%, 66%);
-$white-text: hsl(0, 0%, 100%);
-
 
 body.dark-magic {
     background-color: $very-dark-blue-bg;
@@ -318,6 +366,19 @@ body.dark-magic {
         &:hover {
             // TODO get color right
             background-color: lighten($dark-desaturated-blue-card-bg, 5%);
+        }
+    }
+
+    .toggle-switch {
+        color: $desaturated-blue-text;
+
+        &__button {
+            background-image: $rainbow-toggle;
+        }
+        &:hover {
+            .toggle-switch__label {
+                color: $white-bg;
+            }
         }
     }
 }

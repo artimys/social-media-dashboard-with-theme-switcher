@@ -43,7 +43,7 @@ COMPONENTS
 }
 
 .followers-card {
-  border-top: 3px solid transparent;
+  border-top: 4px solid transparent;
   padding: 1.5em 2em;
   text-align: center;
 }
@@ -186,6 +186,59 @@ COMPONENTS
   color: #dc414c;
 }
 
+.toggle-switch {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.toggle-switch__checkbox {
+  visibility: hidden;
+  position: absolute;
+  top: -50px;
+}
+
+.toggle-switch__checkbox:checked ~ .toggle-switch__button .toggle-switch__circle {
+  background-color: #252a41;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+.toggle-switch__button {
+  display: inline-block;
+  border-radius: 50px;
+  width: 58px;
+  padding: 5px;
+  background-color: #aeb3cb;
+  cursor: pointer;
+}
+
+.toggle-switch__circle {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translate(28px);
+          transform: translate(28px);
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.toggle-switch:hover .toggle-switch__button {
+  background-image: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background-image: linear-gradient(90deg, #378fe6, #3eda82);
+}
+
 /*==========
 LAYOUT
 =========*/
@@ -215,12 +268,6 @@ LAYOUT
 }
 
 .heading-theme-wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   font-size: 0.8rem;
   margin-top: 2em;
   padding: 1.7em 0;
@@ -263,17 +310,11 @@ DESKTOP
 =========*/
 @media only screen and (min-width: 650px) {
   .heading-dashboard {
-    -webkit-box-flex: 2;
-        -ms-flex: 2;
-            flex: 2;
-  }
-  .heading-theme-wrap {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+  .heading-theme-wrap {
     margin-top: 0;
     margin-bottom: 4.5em;
     padding: 0;
@@ -335,5 +376,18 @@ body.dark-magic .overview-card {
 body.dark-magic .followers-card:hover,
 body.dark-magic .overview-card:hover {
   background-color: #2e3552;
+}
+
+body.dark-magic .toggle-switch {
+  color: #8b97c6;
+}
+
+body.dark-magic .toggle-switch__button {
+  background-image: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background-image: linear-gradient(90deg, #378fe6, #3eda82);
+}
+
+body.dark-magic .toggle-switch:hover .toggle-switch__label {
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */
