@@ -304,6 +304,10 @@ DESKTOP
 
     .heading-dashboard {
         flex: 1;
+
+        &__title{
+            font-size: 1.8rem;
+        }
     }
 
     .heading-theme-wrap {

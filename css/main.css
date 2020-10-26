@@ -314,6 +314,9 @@ DESKTOP
         -ms-flex: 1;
             flex: 1;
   }
+  .heading-dashboard__title {
+    font-size: 1.8rem;
+  }
   .heading-theme-wrap {
     margin-top: 0;
     margin-bottom: 4.5em;
