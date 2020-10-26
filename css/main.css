@@ -10,18 +10,19 @@ DEFAULTS
 }
 
 body {
-  background-color: white;
+  background-color: #1e202a;
+  color: white;
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
 }
 
 h1 {
-  color: #1e202a;
+  color: white;
   font-weight: 700;
 }
 
 h2 {
-  color: #63687e;
+  color: white;
   font-size: 1.3rem;
 }
 
@@ -30,16 +31,16 @@ COMPONENTS
 =========*/
 .followers-card,
 .overview-card {
-  background-color: #f0f2fa;
+  background-color: #252a41;
+  color: #8b97c6;
   border-radius: 5px;
-  color: #63687e;
   font-weight: 700;
 }
 
 .followers-card:hover,
 .overview-card:hover {
   cursor: pointer;
-  background-color: #e9ecf7;
+  background-color: #2e3552;
 }
 
 .followers-card {
@@ -83,7 +84,7 @@ COMPONENTS
 .followers-card__count {
   margin-top: 10px;
   font-size: 3.5rem;
-  color: #1e202a;
+  color: white;
 }
 
 .followers-card__count small {
@@ -157,7 +158,7 @@ COMPONENTS
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  color: #1e202a;
+  color: white;
   font-size: 2rem;
   line-height: 26px;
 }
@@ -199,6 +200,7 @@ COMPONENTS
           align-items: center;
   -webkit-column-gap: 20px;
           column-gap: 20px;
+  color: #8b97c6;
 }
 
 .toggle-switch__checkbox {
@@ -207,10 +209,15 @@ COMPONENTS
   top: -50px;
 }
 
+.toggle-switch__checkbox:checked ~ .toggle-switch__button {
+  background-color: #aeb3cb;
+  background-image: none;
+}
+
 .toggle-switch__checkbox:checked ~ .toggle-switch__button .toggle-switch__circle {
-  background-color: #252a41;
-  -webkit-transform: translate(0);
-          transform: translate(0);
+  background-color: #fff;
+  -webkit-transform: translate(28px);
+          transform: translate(28px);
 }
 
 .toggle-switch__button {
@@ -218,21 +225,26 @@ COMPONENTS
   border-radius: 50px;
   width: 58px;
   padding: 5px;
-  background-color: #aeb3cb;
+  background-image: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
+  background-image: linear-gradient(90deg, #378fe6, #3eda82);
   cursor: pointer;
 }
 
 .toggle-switch__circle {
-  background-color: #fff;
+  background-color: #252a41;
   border-radius: 50%;
   width: 20px;
   height: 20px;
-  -webkit-transform: translate(28px);
-          transform: translate(28px);
+  -webkit-transform: translate(0);
+          transform: translate(0);
   -webkit-transition: -webkit-transform 0.5s ease;
   transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
   transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.toggle-switch:hover .toggle-switch__label {
+  color: white;
 }
 
 .toggle-switch:hover .toggle-switch__button {
@@ -245,7 +257,7 @@ LAYOUT
 =========*/
 .body-bg {
   z-index: 0;
-  background-color: #f5f7ff;
+  background-color: #1f212e;
   position: absolute;
   width: 100%;
   height: 240px;
@@ -256,7 +268,7 @@ LAYOUT
 .heading-theme-wrap,
 .heading-overview {
   font-weight: 700;
-  color: #63687e;
+  color: #8b97c6;
 }
 
 .heading-dashboard__title {
@@ -349,49 +361,49 @@ DESKTOP
 }
 
 /*==========
-DARK THEME
+WHITE THEME
 =========*/
-body.dark-magic {
-  background-color: #1e202a;
-  color: white;
+body.white-magic {
+  background-color: white;
+  color: #1e202a;
 }
 
-body.dark-magic h1, body.dark-magic h2,
-body.dark-magic .heading-theme-wrap,
-body.dark-magic .overview-card__count {
-  color: white;
+body.white-magic .body-bg {
+  background-color: #f5f7ff;
 }
 
-body.dark-magic .body-bg {
-  background-color: #1f212e;
+body.white-magic h1,
+body.white-magic .followers-card__count,
+body.white-magic .overview-card__count {
+  color: #1e202a;
 }
 
-body.dark-magic .heading-dashboard,
-body.dark-magic .heading-overview {
-  color: #8b97c6;
+body.white-magic h2,
+body.white-magic .heading-dashboard,
+body.white-magic .heading-overview {
+  color: #63687e;
 }
 
-body.dark-magic .followers-card,
-body.dark-magic .overview-card {
-  background-color: #252a41;
-  color: #8b97c6;
+body.white-magic .followers-card,
+body.white-magic .overview-card {
+  background-color: #f0f2fa;
+  color: #63687e;
 }
 
-body.dark-magic .followers-card:hover,
-body.dark-magic .overview-card:hover {
-  background-color: #2e3552;
+body.white-magic .followers-card:hover,
+body.white-magic .overview-card:hover {
+  background-color: #e9ecf7;
 }
 
-body.dark-magic .toggle-switch {
-  color: #8b97c6;
+body.white-magic .toggle-switch {
+  color: #63687e;
 }
 
-body.dark-magic .toggle-switch__button {
-  background-image: -webkit-gradient(linear, left top, right top, from(#378fe6), to(#3eda82));
-  background-image: linear-gradient(90deg, #378fe6, #3eda82);
+body.white-magic .toggle-switch:hover .toggle-switch__label {
+  color: #63687e;
 }
 
-body.dark-magic .toggle-switch:hover .toggle-switch__label {
-  color: white;
+body.white-magic .toggle-switch__button {
+  background-color: #aeb3cb;
 }
 /*# sourceMappingURL=main.css.map */

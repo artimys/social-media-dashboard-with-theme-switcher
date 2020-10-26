@@ -39,17 +39,19 @@ DEFAULTS
     padding: 0;
 }
 body {
-    background-color: $white-bg;
+    background-color: $very-dark-blue-bg;
+    color: $white-text;
+    // transition: background-color 0.1s;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
 }
 
 h1 {
-    color: $very-dark-blue-text;
+    color: $white-text;
     font-weight: 700;
 }
 h2 {
-    color: $dark-grayish-blue-text;
+    color: $white-text;
     font-size: 1.3rem;
 }
 
@@ -61,15 +63,16 @@ COMPONENTS
 
 .followers-card,
 .overview-card {
-    background-color: $light-grayish-blue-card-bg;
+    background-color: $dark-desaturated-blue-card-bg;
+    color: $desaturated-blue-text;
+    // transition: background-color 0.1s;
     border-radius: 5px;
-    color: $dark-grayish-blue-text;
     font-weight: 700;
 
     &:hover {
         cursor: pointer;
         // TODO get color right
-        background-color: darken($light-grayish-blue-card-bg, 2%);
+        background-color: lighten($dark-desaturated-blue-card-bg, 5%);
     }
 }
 
@@ -106,7 +109,7 @@ COMPONENTS
     &__count {
         margin-top: 10px;
         font-size: 3.5rem;
-        color: $very-dark-blue-text;
+        color: $white-text;
         small {
             display: block;
             color: $dark-grayish-blue-text;
@@ -157,7 +160,7 @@ COMPONENTS
     }
     &__count {
         flex: 1;
-        color: $very-dark-blue-text;
+        color: $white-text;
         font-size: 2rem;
         line-height: 26px;
     }
@@ -191,6 +194,7 @@ $circle-translate: $toggle-button-width - $circle-size - ($toggle-button-padding
     justify-content: space-between;
     align-items: center;
     column-gap: 20px;
+    color: $desaturated-blue-text;
 
     // Real checkbox hidden
     &__checkbox {
@@ -202,9 +206,12 @@ $circle-translate: $toggle-button-width - $circle-size - ($toggle-button-padding
             // ~ selector looks at sibling selector
             // then descend to circle element to style
             ~ .toggle-switch__button {
+                background-color: $light-toggle;
+                background-image: none;
+
                 .toggle-switch__circle {
-                    background-color: $dark-desaturated-blue-card-bg;
-                    transform: translate(0);
+                    background-color: #fff;
+                    transform: translate($circle-translate);
                 }
            }
         }
@@ -214,18 +221,21 @@ $circle-translate: $toggle-button-width - $circle-size - ($toggle-button-padding
         border-radius: 50px;
         width: $toggle-button-width;
         padding: $toggle-button-padding;
-        background-color: $light-toggle;
+        background-image: $rainbow-toggle;
         cursor: pointer;
     }
      &__circle {
-        background-color: #fff;
+        background-color: $dark-desaturated-blue-card-bg;
         border-radius: 50%;
         width: $circle-size;
         height: $circle-size;
-        transform: translate($circle-translate);
+        transform: translate(0);
         transition: transform 0.5s ease;
     }
     &:hover {
+        .toggle-switch__label {
+            color: $white-bg;
+        }
         .toggle-switch__button {
             background-image: $rainbow-toggle;
         }
@@ -240,7 +250,7 @@ LAYOUT
 
 .body-bg {
     z-index: 0;
-    background-color: $very-pale-blue-top-bg-pattern;
+    background-color: $very-dark-blue-top-bg-pattern;
     position: absolute;
     width: 100%;
     height: 240px;
@@ -251,7 +261,7 @@ LAYOUT
 .heading-theme-wrap,
 .heading-overview {
     font-weight: 700;
-    color: $dark-grayish-blue-text;
+    color: $desaturated-blue-text;
 }
 
 .heading-dashboard {
@@ -340,49 +350,50 @@ DESKTOP
 
 
 /*==========
-DARK THEME
+WHITE THEME
 =========*/
 
-body.dark-magic {
-    background-color: $very-dark-blue-bg;
-    color: $white-text;
-
-    h1, h2,
-    .heading-theme-wrap,
-    .overview-card__count {
-        color: $white-text;
-    }
+body.white-magic {
+    background-color: $white-bg;
+    color: $very-dark-blue-text;
 
     .body-bg {
-        background-color: $very-dark-blue-top-bg-pattern;
+        background-color: $very-pale-blue-top-bg-pattern;
     }
 
+    h1,
+    .followers-card__count,
+    .overview-card__count {
+        color: $very-dark-blue-text;
+    }
+
+    h2,
     .heading-dashboard,
     .heading-overview {
-        color: $desaturated-blue-text;
+        color: $dark-grayish-blue-text;
     }
 
     .followers-card,
     .overview-card {
-        background-color: $dark-desaturated-blue-card-bg;
-        color: $desaturated-blue-text;
+        background-color: $light-grayish-blue-card-bg;
+        color: $dark-grayish-blue-text;
 
         &:hover {
             // TODO get color right
-            background-color: lighten($dark-desaturated-blue-card-bg, 5%);
+            background-color: darken($light-grayish-blue-card-bg, 2%);
         }
     }
 
     .toggle-switch {
-        color: $desaturated-blue-text;
+        color: $dark-grayish-blue-text;
 
-        &__button {
-            background-image: $rainbow-toggle;
-        }
         &:hover {
             .toggle-switch__label {
-                color: $white-bg;
+                color: $dark-grayish-blue-text;
             }
+        }
+        &__button {
+            background-color: $light-toggle;
         }
     }
 }
