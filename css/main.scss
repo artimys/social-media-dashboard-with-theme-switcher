@@ -225,6 +225,7 @@ $circle-translate: $toggle-button-width - $circle-size - ($toggle-button-padding
         cursor: pointer;
     }
      &__circle {
+        display: block;
         background-color: $dark-desaturated-blue-card-bg;
         border-radius: 50%;
         width: $circle-size;

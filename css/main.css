@@ -231,6 +231,7 @@ COMPONENTS
 }
 
 .toggle-switch__circle {
+  display: block;
   background-color: #252a41;
   border-radius: 50%;
   width: 20px;
