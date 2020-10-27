@@ -142,7 +142,7 @@ COMPONENTS
     font-size: 0.8rem;
 
     &__top {
-        margin-bottom: 15px;
+        margin-bottom: 30px;
         display: flex;
         align-items: center;
     }
@@ -184,7 +184,7 @@ COMPONENTS
 // ----------- Toggle switch---------------------------
 // To modify toggle size,
 // please only update the $circle-size variable
-$circle-size: 20px;
+$circle-size: 15px;
 $toggle-button-width: ($circle-size * 2) + 18px;
 $toggle-button-padding: 5px;
 $circle-translate: $toggle-button-width - $circle-size - ($toggle-button-padding * 2);
@@ -289,7 +289,7 @@ LAYOUT
     z-index: 1;
     width: 80%;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 30px;
     max-width: 1100px;
 
     header {
