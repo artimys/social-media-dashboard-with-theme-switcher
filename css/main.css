@@ -361,49 +361,104 @@ DESKTOP
 }
 
 /*==========
-WHITE THEME
+THEME: LIGHT MODE
 =========*/
-body.white-magic {
+body.light-magic {
   background-color: white;
   color: #1e202a;
 }
 
-body.white-magic .body-bg {
+body.light-magic .body-bg {
   background-color: #f5f7ff;
 }
 
-body.white-magic h1,
-body.white-magic .followers-card__count,
-body.white-magic .overview-card__count {
+body.light-magic h1,
+body.light-magic .followers-card__count,
+body.light-magic .overview-card__count {
   color: #1e202a;
 }
 
-body.white-magic h2,
-body.white-magic .heading-dashboard,
-body.white-magic .heading-overview {
+body.light-magic h2,
+body.light-magic .heading-dashboard,
+body.light-magic .heading-overview {
   color: #63687e;
 }
 
-body.white-magic .followers-card,
-body.white-magic .overview-card {
+body.light-magic .followers-card,
+body.light-magic .overview-card {
   background-color: #f0f2fa;
   color: #63687e;
 }
 
-body.white-magic .followers-card:hover,
-body.white-magic .overview-card:hover {
+body.light-magic .followers-card:hover,
+body.light-magic .overview-card:hover {
   background-color: #e9ecf7;
 }
 
-body.white-magic .toggle-switch {
+body.light-magic .toggle-switch {
   color: #63687e;
 }
 
-body.white-magic .toggle-switch:hover .toggle-switch__label {
+body.light-magic .toggle-switch:hover .toggle-switch__label {
   color: #63687e;
 }
 
-body.white-magic .toggle-switch__button {
+body.light-magic .toggle-switch__button {
   background-color: #aeb3cb;
+}
+
+#notification {
+  position: fixed;
+  z-index: 5;
+  background-color: #252a41;
+  color: white;
+  font-size: 14px;
+  top: 90px;
+  right: -250px;
+  width: 250px;
+  padding: 10px 25px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.notification--animate {
+  -webkit-animation: slideAnimation 3s;
+          animation: slideAnimation 3s;
+}
+
+@-webkit-keyframes slideAnimation {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    right: 0;
+  }
+  40% {
+    right: 0;
+  }
+  90% {
+    right: -250px;
+  }
+  100% {
+    right: -250px;
+  }
+}
+
+@keyframes slideAnimation {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    right: 0;
+  }
+  40% {
+    right: 0;
+  }
+  90% {
+    right: -250px;
+  }
+  100% {
+    right: -250px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

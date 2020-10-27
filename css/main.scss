@@ -350,10 +350,10 @@ DESKTOP
 
 
 /*==========
-WHITE THEME
+THEME: LIGHT MODE
 =========*/
 
-body.white-magic {
+body.light-magic {
     background-color: $white-bg;
     color: $very-dark-blue-text;
 
@@ -396,4 +396,37 @@ body.white-magic {
             background-color: $light-toggle;
         }
     }
+}
+
+
+
+
+
+
+
+
+
+
+#notification {
+    position: fixed;
+    z-index: 5;
+    background-color: $dark-desaturated-blue-card-bg;
+    color: $white-text;
+    font-size: 14px;
+    top: 90px;
+    right: -250px;
+    width: 250px;
+    padding: 10px 25px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.notification--animate {
+    animation: slideAnimation 3s;
+}
+@keyframes slideAnimation {
+    0%   { opacity: 1; }
+    10%  { right: 0; }
+    40%  { right: 0; }
+    90%  { right: -250px; }
+    100% { right: -250px; }
 }
